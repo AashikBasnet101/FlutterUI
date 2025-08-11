@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/assignment.dart';
 import 'package:flutter_app/assignmentupload.dart';
+import 'package:flutter_app/bottom_nav.dart';
 import 'package:flutter_app/dashboard.dart';
 import 'package:flutter_app/facebook.dart';
 import 'package:flutter_app/futsal_booking.dart';
@@ -10,6 +11,7 @@ import 'package:flutter_app/login_form.dart';
 import 'package:flutter_app/notifications.dart';
 import 'package:flutter_app/profile.dart';
 import 'package:flutter_app/splash_screen.dart';
+import 'package:flutter_app/stack_test.dart';
 import 'package:flutter_app/stateful.dart';
 
 void main() {
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: LoginForm(),
+      home: MyHomePage(),
     );
   }
 }
