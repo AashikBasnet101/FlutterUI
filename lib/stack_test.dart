@@ -1,3 +1,5 @@
+import 'dart:ffi';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_app/string_const.dart';
 
@@ -9,9 +11,10 @@ class StackTest extends StatefulWidget {
 }
 
 class _StackTestState extends State<StackTest> {
-  bool _showBalance = false;
-
+  bool _showHidden = false;
+  String khata = "Kumari Monthly Savings";
   double balance = 20000.00;
+  int accountNumber = 23456789013468;
 
   @override
   Widget build(BuildContext context) {
@@ -108,7 +111,7 @@ class _StackTestState extends State<StackTest> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
-                              "Good Afternoon,",
+                              "Good Evening,",
                               style: TextStyle(
                                 color: Colors.white,
                                 fontSize: 16,
@@ -143,20 +146,29 @@ class _StackTestState extends State<StackTest> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Row(
-                              children: const [
-                                SizedBox(width: 6),
-                                Icon(Icons.wallet),
-                                SizedBox(width: 10),
-                                Text("XXXX XXXX XXXXX"),
+                              children: [
+                                const SizedBox(width: 6),
+                                const Icon(Icons.wallet),
+                                const SizedBox(width: 10),
+                                Text(
+                                  _showHidden ? "${khata}" : "XXXX XXXX XXXXX",
+                                  style: const TextStyle(fontSize: 16),
+                                ),
                               ],
                             ),
 
                             const SizedBox(height: 4),
 
-                            const Row(
+                            Row(
                               children: [
                                 SizedBox(width: 6),
-                                Text("XXXXXXXXXX"),
+
+                                Text(
+                                  _showHidden
+                                      ? "${accountNumber}"
+                                      : "XXXXXXXXXX",
+                                  style: const TextStyle(fontSize: 16),
+                                ),
                               ],
                             ),
 
@@ -166,7 +178,7 @@ class _StackTestState extends State<StackTest> {
                               children: [
                                 const SizedBox(width: 6),
                                 Text(
-                                  _showBalance
+                                  _showHidden
                                       ? "Rs. ${balance.toStringAsFixed(2)}"
                                       : "XXX XXX.XX",
                                   style: const TextStyle(
@@ -178,11 +190,11 @@ class _StackTestState extends State<StackTest> {
                                 GestureDetector(
                                   onTap: () {
                                     setState(() {
-                                      _showBalance = !_showBalance;
+                                      _showHidden = !_showHidden;
                                     });
                                   },
                                   child: Icon(
-                                    _showBalance
+                                    _showHidden
                                         ? Icons.visibility
                                         : Icons.visibility_off,
                                     color: Colors.teal,
