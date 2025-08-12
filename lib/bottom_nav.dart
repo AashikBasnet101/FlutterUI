@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/qr_generator.dart';
 import 'package:flutter_app/stack_test.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -11,7 +12,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> _widgetOptions = <Widget>[
     StackTest(),
     Text('Payments Page'),
-    Text('Send Money Page'),
+    QrGenerator(),
     Text('Ecom Card Page'),
     Text('More Page'),
   ];
