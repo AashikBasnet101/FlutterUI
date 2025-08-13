@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/assignment.dart';
+import 'package:flutter_app/Login_bottom_navbar';
 import 'package:flutter_app/assignmentupload.dart';
 import 'package:flutter_app/bottom_nav.dart';
 import 'package:flutter_app/dashboard.dart';
+import 'package:flutter_app/entry.dart';
 import 'package:flutter_app/facebook.dart';
 import 'package:flutter_app/futsal_booking.dart';
 import 'package:flutter_app/futsal_next.dart';
@@ -30,7 +32,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyHomePage(),
+      home: MyLogin(),
     );
   }
 }

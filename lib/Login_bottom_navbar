@@ -3,18 +3,17 @@ import 'package:flutter_app/entry.dart';
 import 'package:flutter_app/qr_generator.dart';
 import 'package:flutter_app/stack_test.dart';
 
-class MyHomePage extends StatefulWidget {
+class MyLogin extends StatefulWidget {
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MyLoginState createState() => _MyLoginState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MyLoginState extends State<MyLogin> {
   int _selectedIndex = 0;
+
   static const List<Widget> _widgetOptions = <Widget>[
     LoginPage(),
-    Text("payment"),
     QrGenerator(),
-    Text("ecom Card"),
     Text('More Page'),
   ];
 
@@ -31,18 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.payment_rounded),
-            label: 'Payments',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.qr_code),
-            label: 'Send Money',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.send_to_mobile_outlined),
-            label: 'Ecom Card',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.qr_code), label: 'Send Money'),
           BottomNavigationBarItem(icon: Icon(Icons.more_horiz), label: 'More'),
         ],
         currentIndex: _selectedIndex,
