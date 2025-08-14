@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/bottom_nav.dart';
 import 'package:flutter_app/string_const.dart';
+import 'package:local_auth/local_auth.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -80,15 +82,46 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                         ),
                         SizedBox(width: 20),
-                        Container(
-                          height: MediaQuery.of(context).size.height * 0.07,
-                          width: MediaQuery.of(context).size.width * 0.241,
-                          decoration: BoxDecoration(
-                            color: Colors.amber,
-                            borderRadius: BorderRadius.circular(4),
-                          ),
-                          child: Center(
-                            child: Icon(Icons.fingerprint, size: 35),
+                        InkWell(
+                          onTap: () async {
+                            final LocalAuthentication auth =
+                                LocalAuthentication();
+                            final bool canAuthenticateWithBiometrics =
+                                await auth.canCheckBiometrics;
+                            final bool canAuthenticate =
+                                canAuthenticateWithBiometrics ||
+                                await auth.isDeviceSupported();
+                            if (canAuthenticateWithBiometrics ||
+                                canAuthenticate) {
+                              try {
+                                final bool
+                                didAuthenticate = await auth.authenticate(
+                                  localizedReason:
+                                      'Please authenticate to show account balance',
+                                );
+                                if (didAuthenticate) {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => MyHomePage(),
+                                    ),
+                                  );
+                                }
+                              } catch (e) {
+                                print(e);
+                              }
+                            }
+                          },
+                          child: Container(
+                            height: MediaQuery.of(context).size.height * 0.07,
+                            width: MediaQuery.of(context).size.width * 0.241,
+                            decoration: BoxDecoration(
+                              color: Colors.amber,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
+                            child: Center(
+                              child: Icon(Icons.fingerprint, size: 35),
+                            ),
                           ),
                         ),
                       ],
