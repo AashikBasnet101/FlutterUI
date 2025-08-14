@@ -12,6 +12,7 @@ import 'package:flutter_app/instagram.dart';
 import 'package:flutter_app/login_form.dart';
 import 'package:flutter_app/notifications.dart';
 import 'package:flutter_app/profile.dart';
+import 'package:flutter_app/qr_scanner.dart';
 import 'package:flutter_app/splash_screen.dart';
 import 'package:flutter_app/stack_test.dart';
 import 'package:flutter_app/stateful.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: MyLogin(),
+      home: QRScannerPage(),
     );
   }
 }
