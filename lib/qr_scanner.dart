@@ -14,6 +14,7 @@ class QRScannerPage extends StatelessWidget {
           squareSizeFactor: 0.7,
         ),
         resolutionPreset: QRCodeDartScanResolutionPreset.high,
+
         onCameraError: (error) => debugPrint('Camera error: $error'),
         imageDecodeOrientation: ImageDecodeOrientation.original,
         onCapture: (Result result) {

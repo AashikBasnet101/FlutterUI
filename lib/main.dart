@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/api.dart';
 import 'package:flutter_app/assignment.dart';
+
 import 'package:flutter_app/Login_bottom_navbar';
 import 'package:flutter_app/assignmentupload.dart';
 import 'package:flutter_app/bottom_nav.dart';
@@ -11,11 +13,14 @@ import 'package:flutter_app/futsal_next.dart';
 import 'package:flutter_app/instagram.dart';
 import 'package:flutter_app/login_form.dart';
 import 'package:flutter_app/notifications.dart';
+import 'package:flutter_app/pizza.dart';
 import 'package:flutter_app/profile.dart';
 import 'package:flutter_app/qr_scanner.dart';
+import 'package:flutter_app/signup2.dart';
 import 'package:flutter_app/splash_screen.dart';
 import 'package:flutter_app/stack_test.dart';
 import 'package:flutter_app/stateful.dart';
+import 'package:flutter_app/toggle_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -33,7 +38,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: QRScannerPage(),
+      home: SplashScreen(),
     );
   }
 }

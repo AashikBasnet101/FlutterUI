@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/entry.dart';
 import 'package:flutter_app/qr_generator.dart';
 import 'package:flutter_app/stack_test.dart';
+import 'package:flutter_app/toggle_page.dart';
 
 class MyHomePage extends StatefulWidget {
   @override
@@ -10,10 +11,10 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  static const List<Widget> _widgetOptions = <Widget>[
+  static List<Widget> _widgetOptions = <Widget>[
     StackTest(),
     Text("payment"),
-    QrGenerator(),
+    TogglePage(),
     Text("ecom Card"),
     Text('More Page'),
   ];

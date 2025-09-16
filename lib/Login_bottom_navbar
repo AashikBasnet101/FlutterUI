@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_app/entry.dart';
 import 'package:flutter_app/qr_generator.dart';
 import 'package:flutter_app/stack_test.dart';
+import 'package:flutter_app/qr_scanner.dart';
 
 class MyLogin extends StatefulWidget {
   @override
@@ -11,9 +12,9 @@ class MyLogin extends StatefulWidget {
 class _MyLoginState extends State<MyLogin> {
   int _selectedIndex = 0;
 
-  static const List<Widget> _widgetOptions = <Widget>[
+   List<Widget> _widgetOptions = <Widget>[
     LoginPage(),
-    QrGenerator(),
+   QRScannerPage(),
     Text('More Page'),
   ];
 

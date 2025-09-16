@@ -5,7 +5,6 @@ import 'package:flutter_app/course.dart';
 import 'package:flutter_app/logbook.dart';
 import 'package:flutter_app/notifications.dart';
 import 'package:flutter_app/profile.dart';
-import 'package:flutter_app/result.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -104,11 +103,6 @@ class _DashboardScreenState extends State<DashboardScreen> {
       Navigator.push(
         context,
         MaterialPageRoute(builder: (context) => Course()),
-      );
-    } else if (featureName == "Result") {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (context) => Result()),
       );
     } else if (featureName == "Profile") {
       Navigator.push(

@@ -19,39 +19,13 @@ class _QrGeneratorState extends State<QrGenerator> {
     return Scaffold(
       body: Stack(
         children: [
-          Container(
-            decoration: BoxDecoration(color: Colors.white),
-            height: MediaQuery.of(context).size.height,
-          ),
-          Container(
-            decoration: BoxDecoration(
-              color: Color(0xff006380),
-              borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50)),
-            ),
-            height: MediaQuery.of(context).size.height * 0.25,
-          ),
           SafeArea(
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  Row(
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.only(top: 18.0, left: 10),
-                        child: Text(
-                          "Scan Or Share",
-                          style: TextStyle(
-                            fontSize: 18,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
                   Padding(
                     padding: const EdgeInsets.only(
-                      top: 80,
+                      top: 15,
                       left: 10,
                       right: 10,
                     ),
